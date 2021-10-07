@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+  <link rel="stylesheet" href="css/styleHomepage.css">
+</head>
+
+<body>
+
+  <form name="usernameForm" onsubmit="return validate()" action="#" method="post">
+    <div class="row">
+      <label class="usernameLabel">User Name:</label>
+      <input type="text" name="username">
+      <div class="error" id="nameErr"></div>
+    </div>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+  <div class="homepage-footer">
+    <img class="homepage-logo" src="images/nba.png" alt="nba-logo">
+  </div>
+
+</body>
+
+<script src="js/validation.js"></script>
+
+</html>

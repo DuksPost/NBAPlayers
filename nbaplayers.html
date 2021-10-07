@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>NBA Players</title>
+  <link rel="stylesheet" href="css/styleNBAPlayers.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+
+</head>
+
+<body>
+  <div class="loader">Loading...</div>
+
+  <ul>
+    <li><a href="nbaplayers.html"><img class="main-logo" src="images/nbalogo-main.png" alt="logo" /></a></li>
+    <li class="userWelcome" style="float:right">
+      <p><span id="welcomeMessage"></span></p>
+    </li>
+  </ul>
+
+  <div id="root">
+    <div class="filters">
+      <input id="searchBar" type="text" name="searchBar" placeholder="Search by name..." onkeyup="filterPlayers()">
+      <button type="button" name="sort" class="sortBtn" onclick="sortByName()">Sort by first name</button>
+      <div class="dropdown">
+        <button class="dropbtn">Filter by Position</button>
+        <div id="dropdown-content">
+          <a href="#" onClick="filterByPosition('F')">F</a>
+          <a href="#" onClick="filterByPosition('G')">G</a>
+          <a href="#" onClick="filterByPosition('C')">C</a>
+        </div>
+      </div>
+    </div>
+    <table id="table">
+     <tr> <th id="id">
+        <h3>ID</h3>
+      </th>
+      <th id="fname">
+        <h3>First Name</h3>
+      </th>
+      <th id="lname">
+        <h3>Last Name</h3>
+      </th>
+      <th id="position">
+        <h3>Position</h3>
+      </th>
+      <th id="team">
+        <h3>Team</h3>
+      </th>
+      <th id="city">
+        <h3>City</h3>
+      </th>
+</tr>
+	  <tbody id="tableBody">
+
+	  </tbody>
+    </table>
+  </div>
+
+</body>
+
+<script>
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".loader").fadeOut("slow");;
+  });
+</script>
+
+<script src="js/validation.js"></script>
+<script src="js/scripts.js"></script>
+<!-- <script src="js/filters.js"></script> -->
+
+<script>
+  window.onload = function() {
+    var name = window.sessionStorage.getItem('username');
+    if (!!name) {
+      document.getElementById('welcomeMessage').innerHTML = "Hello, " + name + "! 👋";
+    } else {
+      document.getElementById('welcomeMessage').innerHTML = "Hello!";
+    }
+  }
+</script>
+
+</html>
